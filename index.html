@@ -5,8 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatwoot Demo</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>How to Integrate Live Chat to a website using Javascript with Chatwoot.</h1>
+    
+    <script>
+        (function(d,t) {
+          var BASE_URL="https://app.chatwoot.com";
+          var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+          g.src=BASE_URL+"/packs/js/sdk.js";
+          g.defer = true;
+          g.async = true;
+          s.parentNode.insertBefore(g,s);
+          g.onload=function(){
+            window.chatwootSDK.run({
+              websiteToken: 'VyKGLjrXTmmbFY3n68d6jg28',
+              baseUrl: BASE_URL
+            })
+          }
+        })(document,"script");
+    </script>
 </body>
 </html>
